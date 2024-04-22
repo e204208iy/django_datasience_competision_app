@@ -1,0 +1,77 @@
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>久留米工業大学データサイエンス部</title>
+  <link rel="stylesheet" href='{% static "compe_site/css/styles.css" %}'/> 
+</head>
+<body class="w-auto">
+  <header class="shadow-sm bg-white pt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col fs-3 text-black-60 pb-3">
+          久留米工業大学　データサイエンス部
+        </div>
+        <div class="col-md-auto">
+          
+        </div>
+        <div class="col col-lg-2">
+          {% if user.is_authenticated %}
+          <div class="fs-5">{{ user.account_id }} さん</div>
+          {% endif %}
+        </div>
+        <div class="col col-lg-2">
+          {% if user.is_authenticated %}
+          <form action="{% url 'compe_site:logout' %}" method="post" name="f_logout">
+            {% csrf_token %}
+            <input type="hidden" value="logout">
+            <button type="button" class="btn btn-outline-secondary">
+              <a href="javascript:f_logout.submit()" class="logout nav-link">Logout</a>
+            </button>
+          </form>
+          {% else %}
+          <button type="button" class="btn btn-outline-secondary">
+            <a href="{% url 'compe_site:login' %}" class="logout nav-link">Login</a>
+          </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="compe-tabs w-25 mx-auto">
+    <ul class="nav nav-tabs pt-4 mx-auto">
+      {% if request.path == '/' %}
+      <li class="nav-item">
+        <a class="nav-link fs-5 active" href="{% url 'compe_site:ranking' %}">ランキング</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fs-5 link-secondary border-bottom-0 border-white" href="{% url 'compe_site:post_result' %}">結果を投稿</a>
+      </li>
+      {% elif request.path == '/ranking/' %}
+      <li class="nav-item">
+        <a class="nav-link fs-5 active" href="{% url 'compe_site:ranking' %}">ランキング</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fs-5 link-secondary border-bottom-0 border-white" href="{% url 'compe_site:post_result' %}">結果を投稿</a>
+      </li>
+      {% elif request.path == '/postresult/' %}
+      <li class="nav-item">
+        <a class="nav-link fs-5 link-secondary border-bottom-0 border-white" href="{% url 'compe_site:ranking' %}">ランキング</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fs-5 active" href="{% url 'compe_site:post_result' %}">結果を投稿</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div> 
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

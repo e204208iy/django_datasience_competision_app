@@ -1,0 +1,28 @@
+{% extends 'compe_site/base.html' %}
+
+{% block content %}
+<div class="postresult w-75 bg-white mx-auto rounded shadow-sm">
+    <div class="p-2">
+      <p class="fs-3">結果を投稿してください。</p>
+      {% if user.is_authenticated %}
+      <form enctype="multipart/form-data" method='POST'>
+        {% csrf_token %}
+        <div class="">
+          {{form.file}}
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-outline-secondary">送信</button>
+      </form>
+      {% else %}
+      <p class="text-center fs-3">ログインしてください。</p>
+      {% endif %}
+    </div>
+    {% if form.errors %}
+    <ul>
+    {% for error in form.file.errors %}
+        <li>{{ error }}</li><!--form内にエラーがある際に表示させる-->
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}
