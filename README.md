@@ -1,6 +1,8 @@
 # 久留米工業大学　データサイエンス部　
 ## 学内コンペWEBアプリケーション
 
+<img width="1433" alt="gihub" src="https://github.com/e204208iy/django_datasience_competision_app/assets/72591871/58de9b76-119a-48f0-a501-5e4331175950">
+
 ## 機能要件
 - ランキンング表示機能
 - csv投稿機能
