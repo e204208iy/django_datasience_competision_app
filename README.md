@@ -1,8 +1,7 @@
 # 久留米工業大学　データサイエンス部　
 ## 学内コンペWEBアプリケーション
-<img width="1299" alt="スクリーンショット 2024-04-22 11 58 21" src="https://github.com/e204208iy/django_competition_webapp/assets/72591871/4c3cabe7-cfef-49e6-bd85-a03cd5c82eba">
 
-![to_gihub](https://github.com/e204208iy/django_datasience_competision_app/assets/72591871/eba83be4-07be-4c88-a6ce-fc5d25ba2215)
+https://github.com/e204208iy/django_datasience_competision_app/assets/72591871/4d205b90-8889-4c96-ab9c-d1b6ad9e5870
 
 ## 機能要件
 - ランキンング表示機能
