@@ -8,9 +8,6 @@ https://github.com/e204208iy/django_datasience_competision_app/assets/72591871/4
 - csv投稿機能
 - 投稿履歴機能
 
-## 非機能要件
-非表示
-
 ## 技術要件
 1. Anaconda ライブラリ管理
 1. Python Djangoフレームワーク
