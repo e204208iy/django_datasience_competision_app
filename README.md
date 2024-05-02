@@ -12,7 +12,7 @@
 1. Anaconda ライブラリ管理
 1. Python Djangoフレームワーク
 1. Bootstrap5 Webページ装飾
-1. SQLite Database
+1. MySQL Database
 1. nginx Webサーバー
 1. uwsgi APサーバー
 
